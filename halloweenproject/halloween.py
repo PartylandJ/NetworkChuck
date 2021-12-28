@@ -1,16 +1,5 @@
-import RPi.GPIO as GPIO
-import time
-from flask import Flask, render_template, request
-app = Flask(__name__)
-zombie = 40
-stonewolf = 38
-werewolf = 36
-pumpkin = 32
-monstermash = [40, 38, 36, 32]
-GPIO.setmode(GPIO.BOARD)
-relay = monstermash
-for x in relay:
-    GPIO.setup(x, GPIO.OUT)
+import os
+
 
 @app.route("/")
 def index():
